@@ -1,0 +1,34 @@
+[
+    {   
+        "filename_db": "database.php",
+        "url_http": "www.domain2.com",
+        "ftp": {
+            "src": {
+                "host": "ftp.domain1.com",
+                "path": "public_html",
+                "user": "ftp_user1",
+                "pass": "ftp_password1"
+            },
+            "dst": {
+                "host": "ftp.domain2.com",
+                "path": "www",
+                "user": "ftp_user2",
+                "pass": "ftp_password2"
+            }
+        },
+        "db": {
+            "src": {
+                "host": "mysql.domain1.com",
+                "dbname": "domain1_database",
+                "user": "domain1_user",
+                "pass": "domain1_password"
+            },
+            "dst": {
+                "host": "mysql.domain2.com",
+                "dbname": "domain2_database",
+                "user": "domain2_user",
+                "pass": "domain2_password"
+            }
+        }
+    }
+]
