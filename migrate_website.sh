@@ -126,7 +126,7 @@ while read line; do
 
         # Download files from source FTP server
         echo "Baixando os arquivos no ftp://$ftp_src_host/$ftp_src_path..."
-        wget -r -l inf --ftp-user=$ftp_src_user --ftp-password=$ftp_src_pass "ftp://$ftp_src_host/$ftp_src_path" -P backup/ -nc -o "backup/$ftp_src_host.log"
+        wget -r -l inf --ftp-user=$ftp_src_user --ftp-password=$ftp_src_pass "ftp://$ftp_src_host/$ftp_src_path" -P backup/ -nc -o "wget_$ftp_src_host.log"
 
         if [ -d "backup/$ftp_src_host/$ftp_src_path" ]; then
 
