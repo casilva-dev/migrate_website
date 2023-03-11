@@ -99,7 +99,3 @@ Por favor, verifique antes de enviar seu pull request que o código segue as dir
 ## Licença
 
 Este projeto está licenciado sob a licença [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
-## Créditos
-
-Gostaria de agradecer à [OpenAI](https://openai.com) pela utilização de seu modelo [ChatGPT](https://chat.openai.com), que me ajudou imensamente durante o desenvolvimento deste projeto.

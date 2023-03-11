@@ -157,14 +157,14 @@ while read line; do
             # Compress the site backup and send it to the server
             cd "backup/$ftp_src_host/$ftp_src_path"
             zip -r "backup_$ftp_src_host.zip" .
-            curl -T "backup_$ftp_src_host.zip" "ftp://$ftp_dst_user:$ftp_dst_pass@$ftp_dst_host/$ftp_dst_path"
+            curl -T "backup_$ftp_src_host.zip" -u "$ftp_dst_user:$ftp_dst_pass" "ftp://$ftp_dst_host/$ftp_dst_path"
             rm -f "backup_$ftp_src_host.zip"
             cd "$ROOT_DIR"
 
             # Upload unzipper.php to the server and unzip the backup files.
             url_http=$(echo $line | jq -r '.url_http')
             if [ -n "$url_http" ]; then
-                curl -T unzipper.php "ftp://$ftp_dst_user:$ftp_dst_pass@$ftp_dst_host/$ftp_dst_path"
+                curl -T unzipper.php -u "$ftp_dst_user:$ftp_dst_pass" "ftp://$ftp_dst_host/$ftp_dst_path"
                 echo "Descompactando o arquivo backup_$ftp_src_host.zip..."
                 curl -d "dounzip=true&zipfile=backup_$ftp_src_host.zip" http://$url_http/unzipper.php
             else
